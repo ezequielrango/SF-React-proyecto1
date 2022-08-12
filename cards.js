@@ -6,6 +6,7 @@ fetch(URL_CHARACTERS)
 
 const cardPetition =document.getElementById('fetch-petition');
 
+try {
     function showData(data) {
         console.log(data.results);
         data.results.map((character) => {
@@ -25,5 +26,9 @@ const cardPetition =document.getElementById('fetch-petition');
                 </div>   
             `
         })
-    }
+    }  
+} catch (error) {
+    console.log(error);
+    cardPetition.innerHTML +=`<h2 style="text-align:center">Hubo un error, intente nuevamente en unos minutos</h2>`
+}
 
